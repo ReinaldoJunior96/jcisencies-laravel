@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Address;
+use App\Models\Client;
+use App\Models\Conductor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Address::all();
 });
