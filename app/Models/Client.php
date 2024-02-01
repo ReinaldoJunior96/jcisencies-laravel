@@ -12,6 +12,8 @@ class Client extends Model
     protected $table = 'tbl_cliente';
     protected $primaryKey = 'id_cliente';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'nome',
         'identidade',

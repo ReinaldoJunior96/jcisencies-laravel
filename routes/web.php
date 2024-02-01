@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Models\Address;
 use App\Models\Client;
 use App\Models\Conductor;
@@ -18,4 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return Address::all();
+});
+
+
+Route::controller(ClientController::class)->group(function () {
+    Route::get('/clients/', 'index');
+    Route::get('/clients/{id}', 'show');
+    Route::post('/clients/', 'store')->name('create-a-new-client');
 });
